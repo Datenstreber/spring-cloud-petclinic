@@ -38,10 +38,6 @@ There is no `Dockerfile` in this project. You can build a container image (if yo
 ./mvnw spring-boot:build-image
 ```
 
-## In case you find a bug/suggested improvement for Spring Petclinic
-Our issue tracker is available here: https://github.com/spring-projects/spring-petclinic/issues
-
-
 ## Database configuration
 
 In its default configuration, Petclinic uses an in-memory database (H2) which
@@ -60,6 +56,11 @@ or
 
 ```
 docker run -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -e POSTGRES_DB=petclinic -p 5432:5432 postgres:14.1
+```
+
+Then, start the application locally (Using PostGres):
+```
+mvn spring-boot:run -Dspring-boot.run.profiles=postgres
 ```
 
 Further documentation is provided for [MySQL](https://github.com/spring-projects/spring-petclinic/blob/main/src/main/resources/db/mysql/petclinic_db_setup_mysql.txt)
